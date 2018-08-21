@@ -1,0 +1,27 @@
+﻿@model CoinMarketCapProject.Models.RootObject
+
+@{
+    int counter = 0;
+    foreach (var coin in Model.Data)
+    {
+        counter++;
+        if (counter == 30)
+        {
+            break;
+        }
+
+        var src = "https://s2.coinmarketcap.com/static/img/coins/16x16/" + coin.Id + ".png";
+        <tr>
+            <td id="coin-@coin.Id" class="coinName">@coin.Name</td>
+            <td>@coin.Symbol</td>
+            <td><img src="@src" /></td>
+            <td>@Math.Round(@coin.Quote.USD.Price, 2) $</td>
+            <td>@Math.Round(@coin.Quote.USD.PercentChange5m, 2) %</td>
+            <td>@Math.Round(@coin.Quote.USD.PercentChange1h, 2) %</td>
+            <td>@Math.Round(@coin.Quote.USD.PercentChange24h, 2) %</td>
+            <td>@coin.Quote.USD.LastUpdated.ToString()</td>
+            <td><input class="favoriteCheckbox" type="checkbox" /></td>
+        </tr>
+    }
+}
+

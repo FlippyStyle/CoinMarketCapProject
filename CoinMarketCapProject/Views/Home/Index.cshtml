@@ -1,0 +1,21 @@
+﻿<img id="loadingGif" src="~/Content/tenor.gif" style="display:none" />
+<div class="tablesorter-container">
+    <table class="tablesorter">
+        <thead>
+            <tr>
+                <th class="sorter-false">Название</th>
+                <th class="sorter-false">Символ</th>
+                <th class="sorter-false">Логотип</th>
+                <th class="sorter-false">Цена</th>
+                <th class="sorter-false">5 минут</th>
+                <th class="sorter-false">1 час</th>
+                <th class="sorter-false">24 часа</th>
+                <th class="sorter-false">Последнее обновление</th>
+                <th class="sorter-false">Избранное</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.Action("GetTable")
+        </tbody>
+</table>
+</div>
