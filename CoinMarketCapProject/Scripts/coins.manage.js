@@ -14,16 +14,17 @@ $(document).ready(function () {
 
 function initEvents() {
     $(".favoriteCheckbox").on('click', function () {
+        var name;
         if ($(this).prop('checked') === true) {
             var currTr = $(this).parent().parent();
             currTr.insertBefore('table > tbody > tr:first');
-            var name = currTr.find(".coinName").attr("id");
+            name = currTr.find(".coinName").attr("id");
             if (cookieIds.indexOf(name) === -1) {
                 cookieIds.push(name);
                 $.cookie("cookieIds", cookieIds.join(','));
             }
         } else {
-            var name = $(this).parent().parent().find(".coinName").attr("id");
+            name = $(this).parent().parent().find(".coinName").attr("id");
             var index = cookieIds.indexOf(name);
             if (index !== -1) {
                 cookieIds.splice(index, 1);

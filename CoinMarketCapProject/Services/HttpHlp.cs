@@ -1,10 +1,10 @@
-﻿using CoinMarketCapProject.Models;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Web;
+using CoinMarketCapProject.Models;
+using Newtonsoft.Json;
 
 namespace CoinMarketCapProject
 {
